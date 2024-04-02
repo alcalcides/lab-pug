@@ -9,3 +9,12 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
   res.send("hello world");
 });
+
+const pug = require('pug');
+const pugTemplate = pug.compile('p hello pug');
+const htmlFromPug = pugTemplate({})
+console.log(htmlFromPug);
+
+app.get("/pug", (req, res) => {
+  res.send(htmlFromPug)
+})
