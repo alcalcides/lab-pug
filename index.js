@@ -10,11 +10,9 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 
-const pug = require('pug');
-const pugTemplate = pug.compile('p hello pug');
-const htmlFromPug = pugTemplate({})
-console.log(htmlFromPug);
+app.set('views', './views');
+app.set('view engine', 'pug');
 
 app.get("/pug", (req, res) => {
-  res.send(htmlFromPug)
+  res.render('index')
 })
