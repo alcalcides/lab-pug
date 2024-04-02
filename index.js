@@ -10,9 +10,9 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 
-app.set('views', './views');
-app.set('view engine', 'pug');
+app.set("views", "./views");
+app.set("view engine", "pug");
 
 app.get("/pug", (req, res) => {
-  res.render('index')
-})
+  res.render("index", { tabTitle: "lab-pug", mainHeader: "Learning Pug" });
+});
